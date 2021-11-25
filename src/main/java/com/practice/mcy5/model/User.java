@@ -52,12 +52,14 @@ public class User {
     }
 
     public String getFavouriteSport(){ return  favouriteSport; }
+    
     public User withFavouriteSport(String favouriteSport){
         this.favouriteSport = favouriteSport;
         return this;
     }
     
     public String getCountry(){ return country; }
+    
     public User withCountry(String country){
         this.country = country;
         return this;
