@@ -8,14 +8,16 @@ public class User {
     private String lastName;
     private UUID userId;
     private String subjectSpecialization;
+    private String favouriteSport;
 
     public User(){}
 
-    public User(String firstName, String lastName,String subjectSpecialization) {
+    public User(String firstName, String lastName,String subjectSpecialization,String favouriteSport) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userId = UUID.randomUUID();
         this.subjectSpecialization= subjectSpecialization;
+        this.favouriteSport = favouriteSport;
     }
 
     public String getFirstName() {
@@ -44,6 +46,12 @@ public class User {
 
     public User withSubjectSpecialization(String subjectSpecialization){
         this.subjectSpecialization = subjectSpecialization;
+        return this;
+    }
+
+    public String getFavouriteSport(){ return  favouriteSport; }
+    public User withFavouriteSport(String favouriteSport){
+        this.favouriteSport = favouriteSport;
         return this;
     }
 }
