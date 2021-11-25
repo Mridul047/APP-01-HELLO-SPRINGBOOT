@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -21,6 +22,17 @@ public class UserController {
     public List<User> getUsers(){
         List<User> usersList = new ArrayList<>();
         return usersList;
+    }
+
+    @GetMapping("/users/{userId}")
+    public void getUserById(@PathVariable("userId") UUID userId){
+        List<User> usersList = new ArrayList<>();
+        for(User user : usersList){
+            if(userId.equals(user.getUserId())){
+                System.out.println("User found : " + user.getFirstName());
+                break;
+            }
+        }
     }
 
     @PostMapping("/users")
