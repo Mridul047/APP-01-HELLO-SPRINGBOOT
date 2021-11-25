@@ -9,15 +9,17 @@ public class User {
     private UUID userId;
     private String subjectSpecialization;
     private String favouriteSport;
+    private String country;
 
     public User(){}
 
-    public User(String firstName, String lastName,String subjectSpecialization,String favouriteSport) {
+    public User(String firstName, String lastName,String subjectSpecialization,String favouriteSport,String country) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userId = UUID.randomUUID();
         this.subjectSpecialization= subjectSpecialization;
         this.favouriteSport = favouriteSport;
+        this.country = country;
     }
 
     public String getFirstName() {
@@ -52,6 +54,12 @@ public class User {
     public String getFavouriteSport(){ return  favouriteSport; }
     public User withFavouriteSport(String favouriteSport){
         this.favouriteSport = favouriteSport;
+        return this;
+    }
+    
+    public String getCountry(){ return country; }
+    public User withCountry(String country){
+        this.country = country;
         return this;
     }
 }
