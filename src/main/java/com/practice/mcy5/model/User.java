@@ -7,13 +7,15 @@ public class User {
     private String firstName;
     private String lastName;
     private UUID userId;
+    private String subjectSpecialization;
 
     public User(){}
 
-    public User(String firstName, String lastName) {
+    public User(String firstName, String lastName,String subjectSpecialization) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userId = UUID.randomUUID();
+        this.subjectSpecialization= subjectSpecialization;
     }
 
     public String getFirstName() {
@@ -38,4 +40,10 @@ public class User {
         return userId;
     }
 
+    public String getSubjectSpecialization(){ return subjectSpecialization; }
+
+    public User withSubjectSpecialization(String subjectSpecialization){
+        this.subjectSpecialization = subjectSpecialization;
+        return this;
+    }
 }
