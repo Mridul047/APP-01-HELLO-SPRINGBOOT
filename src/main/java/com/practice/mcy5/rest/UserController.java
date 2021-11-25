@@ -2,9 +2,7 @@ package com.practice.mcy5.rest;
 
 import com.practice.mcy5.model.User;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,5 +21,11 @@ public class UserController {
     public List<User> getUsers(){
         List<User> usersList = new ArrayList<>();
         return usersList;
+    }
+
+    @PostMapping("/users")
+    public void setUser(@RequestBody User user){
+        System.out.printf("Request received { %s %s %s } " ,
+                user.getFirstName() , user.getLastName() , user.getUserId());
     }
 }
