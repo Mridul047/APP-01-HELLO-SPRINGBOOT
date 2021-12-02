@@ -1,9 +1,9 @@
 package com.practice.mcy5.rest;
 
 import com.practice.mcy5.model.User;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public void setUser(@RequestBody User user){
-        System.out.printf("Request received { %s %s %s } " ,
-                user.getFirstName() , user.getLastName() , user.getUserId());
+    public void setUser(@Valid @RequestBody User user){
+        System.out.println(user.toString());
     }
+
 }

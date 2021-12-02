@@ -1,12 +1,21 @@
 package com.practice.mcy5.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 public class User {
 
+    @NotEmpty
     private String firstName;
+
+    @NotEmpty
+    @NotEmpty
     private String lastName;
+
+    @NotNull
     private UUID userId;
+
     private String subjectSpecialization;
     private String favouriteSport;
     private String country;
